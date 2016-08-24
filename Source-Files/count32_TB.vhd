@@ -8,9 +8,7 @@ entity count32_TB is
 end count32_TB;
  
 architecture behavior of count32_TB is 
- 
    -- Component Declaration for the Unit Under Test (UUT)
- 
    component count32
       port(
          clk : IN  std_logic;
@@ -18,27 +16,21 @@ architecture behavior of count32_TB is
          count : OUT  std_logic_vector(31 downto 0)
       );
    end component;
-    
-
    --Inputs
    signal clk : std_logic := '0';
    signal maxcount : std_logic_vector(31 downto 0) := "00000000000000000000000000001111";
-
    --Outputs
    signal count : std_logic_vector(31 downto 0);
-
    -- Clock period definitions
    constant clk_period : time := 10 ns;  -- 100MHz
  
 begin
- 
-	-- Instantiate the Unit Under Test (UUT)
+   -- Instantiate the Unit Under Test (UUT)
    uut: count32 port map (
       clk => clk,
       maxcount => maxcount,
       count => count
    );
-
    -- Clock process definitions
    clk_process :process
    begin
@@ -47,19 +39,13 @@ begin
       clk <= '1';
       wait for clk_period/2;
    end process;
- 
-
    -- Stimulus process
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
+      wait for 100 ns;
       wait for clk_period*10;
-
-      -- insert stimulus here 
-
+      -- insert stimulus here
       wait;
    end process;
-
 end;
