@@ -19,9 +19,9 @@ signal icnt: std_logic_vector(31 downto 0) := (others => '0');
 begin
    process(clk) begin
       if (clk = '1' and clk'event) then
-	      if (icnt >= maxcount) then
-		      icnt <= (others => '0');
-	      else
+         if (icnt >= maxcount) then
+            icnt <= (others => '0');
+         else
             icnt <= icnt + "1";
          end if;
       end if;
