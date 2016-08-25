@@ -2,6 +2,7 @@
 -- SpiRx40.vhd: 40-bit SPI receiveer
 --              receives 5 bytes (1 control + 4 data) from an SPI bus
 --              acts as an SPI slave
+-- Author: JPP
 ----------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all, ieee.std_logic_unsigned.all;
