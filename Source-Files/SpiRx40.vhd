@@ -14,9 +14,9 @@ entity SpiRx40 is
       ctrlout : out std_logic_vector( 7 downto 0);
       dataout : out std_logic_vector(31 downto 0)
    );
-end spirx40;
+end SpiRx40;
 
-architecture behavioral of spirx40 is
+architecture behavioral of SpiRx40 is
    signal msg : std_logic_vector(39 downto 0);
 begin
    process(sck) begin
