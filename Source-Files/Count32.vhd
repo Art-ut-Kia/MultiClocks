@@ -15,7 +15,7 @@ entity count32 is
 end count32;
 
 architecture behavioral of count32 is
-signal icnt: std_logic_vector(31 downto 0) := (others => '0');
+   signal icnt: std_logic_vector(31 downto 0) := (others => '0');
 begin
    process(clk) begin
       if (clk = '1' and clk'event) then
