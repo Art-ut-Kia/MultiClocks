@@ -17,9 +17,9 @@ entity decod16 is
 end decod16;
 
 architecture Behavioral of decod16 is
-signal PnSS:  std_logic := '0';
-signal PPnSS: std_logic := '0';
-signal EoRx:  std_logic; -- End of SPI Reception
+   signal PnSS:  std_logic := '0';
+   signal PPnSS: std_logic := '0';
+   signal EoRx:  std_logic; -- End of SPI Reception
 begin
    -- generates the EoRx synchronous pulse on nSS rising edge
    process(Clk) begin
