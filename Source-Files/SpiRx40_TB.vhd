@@ -11,14 +11,14 @@ architecture behavior OF SpiRx40_TB IS
    -- Component Declaration for the Unit Under Test (UUT)
    component SpiRx40
    port(
-      clk : in  std_logic;
+      sck : in  std_logic;
       mosi : in  std_logic;
       ctrlout : out  std_logic_vector(7 downto 0);
       dataout : out  std_logic_vector(31 downto 0)
    );
    end component;
    --Inputs
-   signal clk : std_logic := '0';
+   signal sck : std_logic := '0';
    signal mosi : std_logic := 'Z';
    --Outputs
    signal ctrlout : std_logic_vector(7 downto 0);
@@ -27,7 +27,7 @@ architecture behavior OF SpiRx40_TB IS
 begin
    -- Instantiate the Unit Under Test (UUT)
    uut: SpiRx40 port MAP (
-      clk => clk,
+      sck => sck,
       mosi => mosi,
       ctrlout => ctrlout,
       dataout => dataout
@@ -49,9 +49,9 @@ begin
          for bitcount in 7 downto 0 loop
             mosi <= msg(bytecount)(bitcount);
             wait for 50 ns;
-            clk <= '1';
+            sck <= '1';
             wait for 50 ns;
-            clk <= '0';
+            sck <= '0';
          end loop;
       end loop;
          mosi <= 'Z';
