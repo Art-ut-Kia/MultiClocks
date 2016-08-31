@@ -4,7 +4,7 @@
 -- author: JPP
 ----------------------------------------------------------------------------------
 library ieee;
-use ieee.numeric_std.all, ieee.std_logic_1164.all, ieee.std_logic_unsigned.all;
+use ieee.std_logic_1164.all;
 
 entity d_reg32 is
    generic(
@@ -19,12 +19,10 @@ entity d_reg32 is
 end d_reg32;
 
 architecture behavioral of d_reg32 is
-   signal iq: std_logic_vector(31 downto 0) := std_logic_vector(to_unsigned(q0,32));
 begin
    process(clk) begin
       if clk = '1' and clk'event and en = '1' then
-         iq <= d;
+         q <= d;
       end if;
    end process;
-   q <= iq;
 end behavioral;
