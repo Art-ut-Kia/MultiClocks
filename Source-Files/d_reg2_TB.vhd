@@ -6,8 +6,8 @@ use ieee.std_logic_1164.all;
 
 entity d_reg2_TB is
 end d_reg2_TB;
- 
-architecture behavior of d_reg2_TB is 
+
+architecture behavior of d_reg2_TB is
    -- Component Declaration for the Unit Under Test (UUT)
    component d_reg32
    port(
@@ -41,11 +41,9 @@ begin
       clk <= '1';
       wait for clk_period/2;
    end process;
-
    -- Stimulus process
    stim_proc: process
    begin
-      -- hold reset state for 100 ns.
       wait for 107 ns;
       en <= '1';
       wait;
