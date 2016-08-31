@@ -1,36 +1,31 @@
 --------------------------------------------------------------------------------
 -- d_reg32 test bench
 --------------------------------------------------------------------------------
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity d_reg2_TB is
+end d_reg2_TB;
  
- 
-ENTITY d_reg2_TB IS
-END d_reg2_TB;
- 
-ARCHITECTURE behavior OF d_reg2_TB IS 
+architecture behavior of d_reg2_TB is 
    -- Component Declaration for the Unit Under Test (UUT)
-   COMPONENT d_reg32
-   PORT(
+   component d_reg32
+   port(
       clk : IN  std_logic;
       en : IN  std_logic;
       d : IN  std_logic_vector(31 downto 0);
       q : OUT  std_logic_vector(31 downto 0)
    );
-   END COMPONENT;
-
+   end component;
    -- Inputs
    signal clk : std_logic := '0';
    signal en : std_logic := '0';
    signal d : std_logic_vector(31 downto 0) := x"aaaa5555";
-
    -- Outputs
    signal q : std_logic_vector(31 downto 0);
-
    -- Clock period definitions
    constant clk_period : time := 10 ns;
- 
-BEGIN
+begin
    -- Instantiate the Unit Under Test (UUT)
    uut: d_reg32 PORT MAP (
       clk => clk,
@@ -49,10 +44,10 @@ BEGIN
 
    -- Stimulus process
    stim_proc: process
-   begin		
+   begin
       -- hold reset state for 100 ns.
       wait for 107 ns;
       en <= '1';
       wait;
    end process;
-END;
+end;
