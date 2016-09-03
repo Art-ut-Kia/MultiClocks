@@ -20,7 +20,7 @@ end d_reg32;
 
 architecture behavioral of d_reg32 is
 begin
-   process(clk) begin
+   process(clk, en) begin
       if clk = '1' and clk'event and en = '1' then
          q <= d;
       end if;
