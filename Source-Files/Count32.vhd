@@ -10,7 +10,7 @@ use ieee.std_logic_unsigned.all;
 entity count32 is
    port(
       clk      : in  std_logic;
-		enable   : in  std_logic;
+      enable   : in  std_logic;
       maxcount : in  std_logic_vector(31 downto 0);
       count    : out std_logic_vector(31 downto 0)
    );
