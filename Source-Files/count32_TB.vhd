@@ -37,7 +37,7 @@ begin
 	-- Instantiate the Unit Under Test (UUT)
    uut: count32 port map (
       clk => clk,
-		enable => enable,
+      enable => enable,
       maxcount => maxcount,
       count => count
    );
