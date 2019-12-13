@@ -1,6 +1,6 @@
 /**
  * MultiClockHmi.ino: Human-Machine Interface for Multi-Clock sub-assembly
- * Project: TASM (Time-Accurate Sensor Model)
+ * Project: MultiClock (FPGA based clock generators)
  * Author: JPP 2019/04
  */
 
@@ -153,14 +153,14 @@ void updateEncoder() {
 //-------------------------------------------------------------------------------
 void lcdSplashScreen() {
    lcd.home();
-   lcd.write(" Time  Accurate ");
+   lcd.write("   Multi-Clock  ");
    lcd.setCursor(0, 1);
-   lcd.write(" Sensor   Model ");
+   lcd.write("10 clockk gen's ");
    delay(3000);
    lcd.home();
-   lcd.write("      TASM      ");
+   lcd.write("   Multi-Clock  ");
    lcd.setCursor(0, 1);
-   lcd.write(" (c) AIRBUS H/C ");
+   lcd.write("(c) JP PETILLON ");
    if (digitalRead(pushPin) == 1) while (1);
    while (digitalRead(pushPin) == 0);
 }
