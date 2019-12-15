@@ -4,7 +4,8 @@
 --              note: output is clocked
 ----------------------------------------------------------------------------------
 library ieee;
-use ieee.std_logic_1164.all, ieee.std_logic_unsigned.all;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
 
 entity pulse32 is
    Port(
@@ -16,12 +17,14 @@ entity pulse32 is
 end pulse32;
 
 architecture behavioral of pulse32 is
-   signal lower: std_logic;
+signal lower: std_logic;
+signal ipulse: std_logic := '0';
 begin
-   lower <= '1' when (count<threshold) else '0';
+   lower <= '1' when (count<=threshold) else '0';
    process (clk) begin
-      if (clk = '1' and clk'event) then
-         pulse <= lower; 
+      if rising_edge(Clk) then
+         ipulse <= lower; 
       end if;
    end process;
+	pulse <= ipulse;
 end behavioral;
